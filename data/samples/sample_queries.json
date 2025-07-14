@@ -1,0 +1,85 @@
+{
+  "sample_queries": [
+    {
+      "id": 1,
+      "query": "What are the contraindications of combining metformin with semaglutide in diabetic patients?",
+      "type": "drug_interaction",
+      "expected_sources": ["drugbank", "pubmed"],
+      "complexity": "moderate",
+      "description": "Tests drug interaction analysis with patient-specific context"
+    },
+    {
+      "id": 2,
+      "query": "Find clinical trials testing metformin with GLP-1 inhibitors in patients over 60",
+      "type": "clinical_trial",
+      "expected_sources": ["clinicaltrials", "pubmed"],
+      "complexity": "moderate",
+      "description": "Tests clinical trial search with age-specific filtering"
+    },
+    {
+      "id": 3,
+      "query": "What are the side effects and mechanism of action of semaglutide?",
+      "type": "drug_info",
+      "expected_sources": ["drugbank", "pubmed"],
+      "complexity": "simple",
+      "description": "Tests basic drug information retrieval"
+    },
+    {
+      "id": 4,
+      "query": "Summarize the latest FDA warning on semaglutide and its implications for clinical practice",
+      "type": "multi_step",
+      "expected_sources": ["pubmed", "fda"],
+      "complexity": "complex",
+      "description": "Tests multi-step reasoning and synthesis"
+    },
+    {
+      "id": 5,
+      "query": "Compare the cardiovascular outcomes of different GLP-1 agonists in elderly patients",
+      "type": "multi_step",
+      "expected_sources": ["pubmed", "clinicaltrials"],
+      "complexity": "complex",
+      "description": "Tests comparative analysis across multiple drugs and patient populations"
+    },
+    {
+      "id": 6,
+      "query": "Is metformin safe for patients with kidney disease?",
+      "type": "contraindication",
+      "expected_sources": ["drugbank", "pubmed"],
+      "complexity": "moderate",
+      "description": "Tests contraindication analysis with specific medical conditions"
+    },
+    {
+      "id": 7,
+      "query": "What is the recommended dosing for semaglutide in obese patients without diabetes?",
+      "type": "drug_info",
+      "expected_sources": ["drugbank", "fda"],
+      "complexity": "moderate",
+      "description": "Tests dosing information for specific patient populations"
+    },
+    {
+      "id": 8,
+      "query": "Find ongoing trials for diabetes drugs that showed cardiovascular benefits",
+      "type": "clinical_trial",
+      "expected_sources": ["clinicaltrials", "pubmed"],
+      "complexity": "moderate",
+      "description": "Tests trial search with outcome-specific criteria"
+    }
+  ],
+  "test_contexts": [
+    {
+      "patient_age": 65,
+      "patient_conditions": ["type 2 diabetes", "hypertension"],
+      "medications": ["metformin", "lisinopril"]
+    },
+    {
+      "patient_age": 45,
+      "patient_conditions": ["obesity", "prediabetes"],
+      "medications": []
+    },
+    {
+      "patient_age": 72,
+      "patient_conditions": ["type 2 diabetes", "chronic kidney disease", "cardiovascular disease"],
+      "medications": ["insulin", "atorvastatin"]
+    }
+  ]
+}
